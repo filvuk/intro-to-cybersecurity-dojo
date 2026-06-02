@@ -43,7 +43,7 @@ You can avoid this by specifying a different encoding, such as [ISO-8859-1](http
 
 Even though Latin-1 pre-dates Unicode, decoding with it produces a standard Python Unicode string.
 However, keep in mind that Latin-1 encoding is _different_ from UTF-8: `b"\xb0".encode("latin").decode() == b'\xc2\xb0'`.
-You must, instead, be consistent and decode and encode with the same encoding: `b"\xb0".encode('latin").decode(latin1) == b"\xb0"`.
+You must, instead, be consistent and decode and encode with the same encoding: `b"\xb0".encode("latin").decode("latin1") == b"\xb0"`.
 
 Anyways, all this sounds terrifying, but it's mostly a warning for the future.
 For _this_ level, we VERY carefully chose the characters so that you don't run into these issues.
